@@ -1,0 +1,30 @@
+﻿<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MauiApp1.MainPage">
+    <StackLayout>
+        <Entry x:Name="entry" Placeholder="Введіть текст" />
+        <Button Text="Додати" Clicked="OnAddClicked" Style="{StaticResource MyButtonStyle}" />
+        <ListView x:Name="listView" ItemTapped="OnItemSelected">
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <ViewCell>
+                        <Grid>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="*" />
+                                <ColumnDefinition Width="Auto" />
+                            </Grid.ColumnDefinitions>
+                            <Label Text="{Binding}" />
+                            <Button Text="Видалити" Clicked="OnDeleteClicked" Grid.Column="1" />
+                        </Grid>
+                    </ViewCell>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+        <Label x:Name="labelSelectedItem" />
+    </StackLayout>
+</ContentPage>
+
+
+
+
+
